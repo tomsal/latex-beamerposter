@@ -1,5 +1,5 @@
 % this style was created by Horea Christian and is basted on the ETH Zürich corporate design color palette https://www.ethz.ch/services/en/service/communication/corporate-design/colour.html
-\ProvidesPackage{beamerthemeZH}
+\ProvidesPackage{beamerthemeTUD}
 
 % \usepackage{graphics}
 \usepackage{graphicx}
@@ -13,18 +13,20 @@
 
 \mode<presentation>
 
-\definecolor{ETH1}{RGB}{31,64,122}
-\definecolor{ETH3}{RGB}{0,105,180}
-\definecolor{ETH6}{RGB}{111,111,110}
-\definecolor{ETH8}{RGB}{0,122,146}
-\definecolor{ETH10}{RGB}{130,190,30}
-\definecolor{tlg}{RGB}{230,230,230}
+\definecolor{ETH1}{RGB}{31,64,122} %% NOTE: ?
+\definecolor{ETH3}{RGB}{0,105,180} %% NOTE: bg-color header and footer
+\definecolor{ETH6}{RGB}{111,111,110} %% NOTE: ?
+\definecolor{ETH8}{RGB}{0,122,146} %% NOTE: ?
+\definecolor{ETH10}{RGB}{130,190,30} %% NOTE: bg-color for section heading
+\definecolor{tlg}{RGB}{230,230,230} %% NOTE: main bg-color
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%It seems many of the following entries do not control any visible Behaviour. All such entries are
-%set to red, so that they are easy to spot if they ever become visible
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% It seems many of the following entries do not control any visible Behaviour.
+% All such entries are set to red, so that they are easy to spot if they ever
+% become visible
 
-\setbeamercolor{headline}{fg=red,bg=ETH3} % This is the recommended color for Specialist community usage: change to ETH1 for general communication
+\setbeamercolor{headline}{fg=red,bg=ETH3}
+% This is the recommended color for Specialist community usage: change to ETH1 for general communication
 \setbeamercolor{footline}{fg=red, bg=red}
 \setbeamerfont{footline}{size=\large,series=\bf}
 \setbeamercolor{separation line}{bg=ETH3}
