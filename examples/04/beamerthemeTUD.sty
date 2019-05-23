@@ -3,6 +3,7 @@
 
 % \usepackage{graphics}
 \usepackage{graphicx}
+\usepackage{adjustbox}
 \newcommand{\vcenteredinclude}[1]{\begingroup
 \setbox0=\hbox{\includegraphics[width=.8\textwidth, height=.06\paperheight, keepaspectratio]{#1}}%
 \parbox{\wd0}{\box0}\endgroup}
@@ -55,13 +56,23 @@
 \setbeamertemplate{itemize items}{\color{tudcyan}$\blacktriangleright$}
 \setbeamertemplate{navigation symbols}{}  % no navigation on a poster
 
+\newenvironment<>{tudcolumn}[1]{%before
+	\hfill
+	\begin{adjustbox}{minipage=[t][0.97\textheight][t]{#1},
+										margin=0ex,bgcolor=tudgray}
+	}{%after
+	\end{adjustbox}
+	\hfill
+	}%
+
 \newenvironment<>{myblock}[1]{%
 	\begin{actionenv}#2%
-	\def\insertblocktitle{\centering#1}%
+	\def\insertblocktitle{\centering #1}%
 	\par%
-	\usebeamertemplate{block begin}\leftskip=14pt\rightskip=14pt\vspace{10pt}}
+	\usebeamertemplate{block begin}}
 	{\par\vspace{1em}\usebeamertemplate{block end}
-	\end{actionenv}}
+	\end{actionenv}
+	}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % !!! This environment can't both have nice margins AND display the contained text as justified:
@@ -69,8 +80,9 @@
 \setbeamertemplate{block begin}{
 	\setlength{\mylength}{\textwidth}%
 	%\vskip2ex
-	\begin{beamercolorbox}[ht=2.8ex,dp=2ex, wd=\mylength, center,rounded=false,shadow=false,leftskip=1cm,colsep*=0ex]{block title}%
-		\usebeamerfont*{block title}\centering \insertblocktitle
+	\begin{beamercolorbox}[ht=2.8ex,dp=2ex,wd=\mylength,center,rounded=false,
+												 shadow=false,leftskip=0cm,colsep*=0ex]{block title}%
+		\usebeamerfont*{block title}\insertblocktitle
 	\end{beamercolorbox}%
 	{\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip}}%
 	\usebeamerfont{block body}%
@@ -112,7 +124,7 @@
  	\begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
 		\rule{0pt}{2pt}
 	\end{beamercolorbox}
-	\vskip 2cm
+	\vskip 0cm
 	}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
