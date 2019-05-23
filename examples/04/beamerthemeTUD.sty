@@ -14,33 +14,34 @@
 \mode<presentation>
 
 \definecolor{ETH1}{RGB}{31,64,122} %% NOTE: ?
-\definecolor{ETH3}{RGB}{0,105,180} %% NOTE: bg-color header and footer
+\definecolor{tudskyblue}{RGB}{0,166,214} %% NOTE: bg-color header and footer
 \definecolor{ETH6}{RGB}{111,111,110} %% NOTE: ?
 \definecolor{ETH8}{RGB}{0,122,146} %% NOTE: ?
-\definecolor{ETH10}{RGB}{130,190,30} %% NOTE: bg-color for section heading
-\definecolor{tlg}{RGB}{230,230,230} %% NOTE: main bg-color
+\definecolor{tudcyan}{RGB}{0,176,240} %% NOTE: bg-color for section heading
+\definecolor{tudgray}{RGB}{242,242,242} %% NOTE: bg-color for section
+\definecolor{mainbg}{RGB}{255,255,255} %% NOTE: main bg-color
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % It seems many of the following entries do not control any visible Behaviour.
 % All such entries are set to red, so that they are easy to spot if they ever
 % become visible
 
-\setbeamercolor{headline}{fg=red,bg=ETH3}
+\setbeamercolor{headline}{fg=red,bg=tudskyblue}
 % This is the recommended color for Specialist community usage: change to ETH1 for general communication
 \setbeamercolor{footline}{fg=red, bg=red}
 \setbeamerfont{footline}{size=\large,series=\bf}
-\setbeamercolor{separation line}{bg=ETH3}
+\setbeamercolor{separation line}{bg=tudskyblue}
 \setbeamercolor{title in headline}{fg=white}
 \setbeamercolor{author in headline}{fg=white}
 \setbeamercolor{institute in headline}{fg=white}
 
 \setbeamercolor{framesubtitle}{fg=red, bg=ta2gray}
-\setbeamercolor{author in head/foot}{fg=white, bg=ETH3}
+\setbeamercolor{author in head/foot}{fg=white, bg=tudskyblue}
 \setbeamercolor{title in head/foot}{fg=red, bg=red}
 
-\setbeamercolor*{normal text}{fg=ETH6, bg=tlg}
-\setbeamercolor*{block body}{fg=black, bg=white}
-\setbeamercolor*{block title}{fg=black,bg=ETH10}
+\setbeamercolor*{normal text}{fg=ETH6, bg=mainbg}
+\setbeamercolor*{block body}{fg=black, bg=tudgray}
+\setbeamercolor*{block title}{fg=white,bg=tudcyan}
 \setbeamerfont{block title}{size=\large,series=\bf}
 \setbeamercolor{upper separation line head}{fg=red}
 
@@ -51,7 +52,7 @@
 \setbeamercolor{alerted text}{fg=red}
 \setbeamercolor{structure}{fg=ETH1}
 
-\setbeamertemplate{itemize items}{\color{ETH10}$\blacktriangleright$}
+\setbeamertemplate{itemize items}{\color{tudcyan}$\blacktriangleright$}
 \setbeamertemplate{navigation symbols}{}  % no navigation on a poster
 
 \newenvironment<>{myblock}[1]{%
