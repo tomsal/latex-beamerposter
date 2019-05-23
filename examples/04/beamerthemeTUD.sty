@@ -4,6 +4,7 @@
 % \usepackage{graphics}
 \usepackage{graphicx}
 \usepackage{adjustbox}
+\usepackage{tikz}
 \newcommand{\vcenteredinclude}[1]{\begingroup
 \setbox0=\hbox{\includegraphics[width=.8\textwidth, height=.06\paperheight, keepaspectratio]{#1}}%
 \parbox{\wd0}{\box0}\endgroup}
@@ -18,6 +19,8 @@
 \definecolor{tudskyblue}{RGB}{0,166,214} %% NOTE: bg-color header and footer
 \definecolor{ETH6}{RGB}{111,111,110} %% NOTE: ?
 \definecolor{ETH8}{RGB}{0,122,146} %% NOTE: ?
+\definecolor{tuddarkteal}{RGB}{0,106,150} %% NOTE: top color header gradient
+\definecolor{tudturquoise}{RGB}{0,184,255} %% NOTE: bottom color header gradient
 \definecolor{tudcyan}{RGB}{0,176,240} %% NOTE: bg-color for section heading
 \definecolor{tudgray}{RGB}{242,242,242} %% NOTE: bg-color for section
 \definecolor{mainbg}{RGB}{255,255,255} %% NOTE: main bg-color
@@ -27,7 +30,7 @@
 % All such entries are set to red, so that they are easy to spot if they ever
 % become visible
 
-\setbeamercolor{headline}{fg=red,bg=tudskyblue}
+\setbeamercolor{headline}{fg=red,bg=red}
 % This is the recommended color for Specialist community usage: change to ETH1 for general communication
 \setbeamercolor{footline}{fg=red, bg=red}
 \setbeamerfont{footline}{size=\large,series=\bf}
@@ -99,33 +102,38 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setbeamertemplate{headline}{
 	\leavevmode
-	\begin{beamercolorbox}[wd=\paperwidth]{headline}
-		\vspace{2ex}\\
+	\newbox\titlebox
+	\setbox\titlebox\vbox{%
+		\vspace{10ex}\\
 		\begin{columns}[c]
-			\begin{column}{.09\paperwidth}
-			\end{column}
-			\begin{column}{.675\paperwidth}
-				\raggedleft
-				\usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\[1ex]}
-				\usebeamercolor{author in headline}{\color{fg}\large{\insertauthor}\\[1ex]}
-				\usebeamercolor{institute in headline}{\color{fg}\small{\insertinstitute}\\[1ex]}
-			\end{column}
-			\begin{column}{.25\paperwidth}
-				\begin{center}
-					\includegraphics[width=.8\textwidth, height=.39\textwidth, keepaspectratio]{img/zh_logo}
-				\end{center}
-			\end{column}
-			\begin{column}{.03\paperwidth}
+			\begin{column}{.80\paperwidth}
+				\centering
+				%\raggedleft
+				\usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}}
+				%\usebeamercolor{author in headline}{\color{fg}\large{\insertauthor}\\[1ex]}
+				%\usebeamercolor{institute in headline}{\color{fg}\small{\insertinstitute}\\[1ex]}
 			\end{column}
 		\end{columns}
-		\vspace{2ex}\\
-	\end{beamercolorbox}
-
- 	\begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
-		\rule{0pt}{2pt}
-	\end{beamercolorbox}
-	\vskip 0cm
+		\vspace{10ex}\\
+	}%
+  \tud@headergradient{
+    +\ht\titlebox+\dp\titlebox}%
+	\unvbox\titlebox%
 	}
+
+\newlength\tud@titleheight
+\def\tud@headergradient#1{%
+  \deflength\tud@titleheight{#1}%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node at (current page.north west)
+      {\begin{tikzpicture}[remember picture,overlay]
+				\draw[draw=none,top color=tuddarkteal,bottom color=tudturquoise] (0,0) rectangle
+            (\paperwidth,-\tud@titleheight);
+       \end{tikzpicture}
+      };
+  \end{tikzpicture}
+	}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setbeamertemplate{footline}{
