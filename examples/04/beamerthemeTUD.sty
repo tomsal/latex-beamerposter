@@ -67,12 +67,12 @@
 % !!! This environment can't both have nice margins AND display the contained text as justified:
 % We preferentially use the above but keep this one just-in-case
 \setbeamertemplate{block begin}{
-	\setlength{\mylength}{\textwidth+2ex}%
-	\vskip2ex
+	\setlength{\mylength}{\textwidth}%
+	%\vskip2ex
 	\begin{beamercolorbox}[ht=2.8ex,dp=2ex, wd=\mylength, center,rounded=false,shadow=false,leftskip=1cm,colsep*=0ex]{block title}%
 		\usebeamerfont*{block title}\centering \insertblocktitle
-	\end{beamercolorbox}\vskip-9pt%
-	{\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5ex}}%
+	\end{beamercolorbox}%
+	{\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip}}%
 	\usebeamerfont{block body}%
 	\begin{beamercolorbox}[rounded=false,shadow=false,center,wd=\textwidth,]{block body}%
 		\ifbeamercolorempty[bg]{block body}\vbox{}%
@@ -112,7 +112,7 @@
  	\begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
 		\rule{0pt}{2pt}
 	\end{beamercolorbox}
-	\vskip-2cm
+	\vskip 2cm
 	}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
