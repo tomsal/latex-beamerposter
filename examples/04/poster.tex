@@ -21,14 +21,12 @@
 \date{\today}
 
 % edit this depending on how tall your header is. We should make this scaling automatic :-/
-\newlength{\columnheight}
-\setlength{\columnheight}{104cm}
+%\newlength{\columnheight}
+%\setlength{\columnheight}{104cm}
 
 \begin{document}
 \begin{frame}
 	\begin{tudcolumn}{.48\textwidth}
-		\begin{beamercolorbox}[center]{postercolumn}
-				\parbox[t][\columnheight]{\textwidth}{ % must be some better way to set the the height, width and textwidth simultaneously
 					\begin{myblock}{Introduction}
 						\textbf{THIS IS NOT THE ORIGINAL DOCUMENT, and was produced from 
 								a modified static source, in order to guarantee portability.
@@ -106,12 +104,8 @@
 						\end{figure}
 						
 					\end{myblock}
-		}
-		\end{beamercolorbox}
 	\end{tudcolumn}
 	\begin{tudcolumn}{.48\textwidth}
-		\begin{beamercolorbox}[center]{postercolumn}
-				\parbox[t][\columnheight]{\textwidth}{ % must be some better way to set the the height, width and textwidth simultaneously
 					\begin{myblock}{Methods}
 						For robust genotyping we have designed 2 multiplex-compatible
 						primer pairs for the Cre recombinase (transgene construct) and
@@ -189,8 +183,6 @@
 						\bibliographystyle{abbrv}
 						\bibliography{./bib}
 					\end{myblock}%\vfill
-		}
-		\end{beamercolorbox}
 	\end{tudcolumn}
 \end{frame}
 \end{document}
