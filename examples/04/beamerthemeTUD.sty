@@ -15,10 +15,8 @@
 
 \mode<presentation>
 
-\definecolor{ETH1}{RGB}{31,64,122} %% NOTE: structure?
 \definecolor{tudskyblue}{RGB}{0,166,214} %% NOTE: bg-color footer
 \definecolor{textcolor}{RGB}{0,0,0} %% NOTE: normal text
-%\definecolor{ETH8}{RGB}{0,122,146} %% NOTE: ?
 \definecolor{tuddarkteal}{RGB}{0,106,150} %% NOTE: top color header gradient
 \definecolor{tudturquoise}{RGB}{0,184,255} %% NOTE: bottom color header gradient
 \definecolor{tudcyan}{RGB}{0,176,240} %% NOTE: bg-color for section heading
@@ -31,7 +29,6 @@
 % become visible
 
 \setbeamercolor{headline}{fg=red,bg=red}
-% This is the recommended color for Specialist community usage: change to ETH1 for general communication
 \setbeamercolor{footline}{fg=textcolor, bg=red}
 \setbeamerfont{footline}{size=\large,series=\bf}
 \setbeamercolor{separation line}{bg=white}
@@ -54,9 +51,8 @@
 \setbeamercolor*{example title}{bg=red,fg=red}
 
 \setbeamercolor{alerted text}{fg=red}
-\setbeamercolor{structure}{fg=ETH1}
+\setbeamercolor{structure}{fg=red}
 
-%\setbeamertemplate{itemize items}{\color{tudcyan}$\blacktriangleright$}
 \setbeamertemplate{itemize items}{\color{textcolor}$\boldsymbol\cdot$}
 \setbeamertemplate{navigation symbols}{}  % no navigation on a poster
 
@@ -78,9 +74,7 @@
 	\end{actionenv}
 	}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% !!! This environment can't both have nice margins AND display the contained text as justified:
-% We preferentially use the above but keep this one just-in-case
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setbeamertemplate{block begin}{
 	\setlength{\mylength}{\textwidth}%
 	\begin{beamercolorbox}[ht=3.4ex,dp=1.8ex,wd=\mylength,center,rounded=false,
@@ -89,7 +83,9 @@
 	\end{beamercolorbox}%
 	{\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip}}%
 	\usebeamerfont{block body}%
-	\begin{beamercolorbox}[rounded=false,shadow=false,center,wd=\textwidth,]{block body}%
+	\begin{beamercolorbox}
+			[rounded=false,shadow=false,center,wd=\textwidth,]
+			{block body}%
 		\vskip 1ex
 		\begin{minipage}{0.92\textwidth}\vbox{}%
 		}
@@ -99,7 +95,7 @@
 	\end{beamercolorbox}
 	}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setbeamertemplate{headline}{
 	\newbox\titlebox
 	\setbox\titlebox\vbox{%
@@ -107,8 +103,8 @@
 		\begin{columns}[c]
 			\begin{column}{.80\paperwidth}
 				\centering
-				%\raggedleft
-				\usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}}
+				\usebeamercolor{title in headline}
+						{\color{fg}\textbf{\LARGE{\inserttitle}}}
 			\end{column}
 		\end{columns}
 		\vspace{5ex}\\
@@ -143,7 +139,7 @@
 	}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setbeamertemplate{footline}{
 	\begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
 		\rule{\paperwidth}{5pt}
@@ -165,7 +161,9 @@
 		\vskip 1ex
 	\end{beamercolorbox}
 	\leavevmode%
-	\begin{beamercolorbox}[ht=4ex,leftskip=1cm,rightskip=4cm]{author in head/foot}%
+	\begin{beamercolorbox}
+			[ht=4ex,leftskip=1cm,rightskip=4cm]
+			{author in head/foot}%
 		\hfill
 		Cognitive Robotics Department
 		\vskip 1ex

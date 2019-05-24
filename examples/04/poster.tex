@@ -1,17 +1,10 @@
 \documentclass{beamer}
 \usepackage[orientation=portrait,size=a0,scale=1.4,debug]{beamerposter}
 \mode<presentation>{\usetheme{TUD}}
-%\usepackage{chemformula}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel} % required for rendering German special characters
-%\usepackage{siunitx} %pretty measurement unit rendering
 \usepackage{hyperref} %enable hyperlink for urls
-%\usepackage{ragged2e}
 \usepackage[font=scriptsize,justification=justified]{caption}
-%\usepackage{array,booktabs,tabularx}
-
-%\newcolumntype{Z}{>{\centering\arraybackslash}X} % centered tabularx columns
-%\sisetup{per=frac,fraction=sfrac}
 
 \title{\huge Opto-fMRI of Monoaminergic Systems and Psychotropic Drugs}
 \author{Horea-Ioan Ioanas$^{1,2}$, Bechara Saab$^{2}$, Markus Rudin$^{1}$}
@@ -19,10 +12,6 @@
 	{$^{1}$Institute for Biomedical Engineering, ETH and University of Zurich \\
 	 $^{2}$DPPP, Psychiatric Hospital, University of Zurich}
 \date{\today}
-
-% edit this depending on how tall your header is. We should make this scaling automatic :-/
-%\newlength{\columnheight}
-%\setlength{\columnheight}{104cm}
 
 \begin{document}
 \begin{frame}
@@ -33,7 +22,6 @@
 							\item Two
 							\item Four
 						\end{itemize}
-
 						Monoaminergic systems are ensembles of neurons defined by the 
 						primary production of monoamine neurotransmitters (most prominently 
 						serotonin, dopamine, and noradrenaline).
@@ -57,7 +45,6 @@
 								majority of cortical and subcortical areas \cite{Oegren2008}}
 							\end{minipage}
 						\end{figure}
-						%\vfill
 					\end{myblock}
 					\begin{myblock}{Chronic Serotonin Reuptake Inhibition}
 						Selective Serotonin Reuptake Inhibitors (SSRI) are used in the
@@ -80,10 +67,6 @@
 								\label{fig:stim}
 							\end{minipage}
 						\end{figure}
-						%\begin{itemize}
-						%	\item Opto-fMRI can be used to analyze chronic SSRI effects on serotonergic neurotransmission - by modelling the effect of treatment on individual pulse trains, or the interaction effect of treatment and pulse train number on series of pulse trains (as seen in figure~\ref{fig:stim}).
-						% 	\item The large-scale readout capacity of opto-fMRI can also detect whether there are regionally varying effects of chronic SSRI administration (and consequently allow a functional characterization of neuronal subpopulations of the dorsal raphe).
-						%\end{itemize}
 						\vspace{0.5em}
 						\begin{figure}
 							\begin{minipage}{0.94\textwidth}
@@ -107,26 +90,6 @@
 						These are listed below, alongside a genotyping assay featuring 3
 						controls (water, known transgene, and known wildtype - on the
 						first, second-to-last and last non-ladder lanes respectively):
-						%\vspace{0.1em}
-						%\begin{figure}
-						%	\begin{minipage}{.45\textwidth}
-						%		\scriptsize
-						%		\begin{tabular}{@{} p{.1\linewidth} r r @{}}
-						%			\toprule
-						%			Direction  &      \multicolumn{2}{c @{}}{Target Construct}      \\
-						%			\cmidrule(l){2-3}
-						%			&   Cre       & GAPDH  \\
-						%			\cmidrule(lr){1-3}
-						%			fw &   \texttt{ACCAGCCAGCTATCAACTCG} & \texttt{CTCCATTTCCCCTGTTCTCC}    \\
-						%			rv &   \texttt{TTGCCCCTGTTTCACTATCC} & \texttt{GAGACCTGAATGCTGCTTCC}    \\
-						%			\bottomrule
-						%		\end{tabular}
-						%	\end{minipage}
-						%	\begin{minipage}{.45\textwidth}
-						%		\centering\includegraphics[width=0.95\textwidth]{img/ag1}
-						%	\end{minipage}
-						%\end{figure}
-						%\vspace{1em}
 						To facillitate multimodal and exploratory data analysis,
 						LabbookDB - a relational database structure - was developed to
 						replace the common lab book and integrate metadata directly with
@@ -151,7 +114,7 @@
 									\href{https://github.com/TheChymera/labbookdb}{github.com/TheChymera/labbookdb}}
 							\end{minipage}
 						\end{figure}
-					\end{myblock}%\vfill
+					\end{myblock}
 					\begin{myblock}{Acute Fluoxetine Effects}
 						Preliminary results from the comparison of the first two
 						measurement sessions (as seen in figure~\ref{fig:tt}) indicate
@@ -171,12 +134,12 @@
 								\label{fig:fail}
 							\end{minipage}
 						\end{figure}
-					\end{myblock}%\vfill
+					\end{myblock}
 					\begin{myblock}{References}
 						\footnotesize
 						\bibliographystyle{abbrv}
 						\bibliography{./bib}
-					\end{myblock}%\vfill
+					\end{myblock}
 	\end{tudcolumn}
 \end{frame}
 \end{document}
