@@ -10,7 +10,7 @@
 \parbox{\wd0}{\box0}\endgroup}
 
 
-\usepackage{calc}
+%\usepackage{calc}
 \newlength{\mylength}
 
 \mode<presentation>
@@ -56,7 +56,8 @@
 \setbeamercolor{alerted text}{fg=red}
 \setbeamercolor{structure}{fg=ETH1}
 
-\setbeamertemplate{itemize items}{\color{tudcyan}$\blacktriangleright$}
+%\setbeamertemplate{itemize items}{\color{tudcyan}$\blacktriangleright$}
+\setbeamertemplate{itemize items}{\color{textcolor}$\boldsymbol\cdot$}
 \setbeamertemplate{navigation symbols}{}  % no navigation on a poster
 
 \newenvironment<>{tudcolumn}[1]{%before
@@ -70,10 +71,10 @@
 
 \newenvironment<>{myblock}[1]{%
 	\begin{actionenv}#2%
-	\def\insertblocktitle{\centering #1}%
+	\def\insertblocktitle{\centering\large{#1}}%
 	\par%
 	\usebeamertemplate{block begin}}
-	{\par\vspace{1em}\usebeamertemplate{block end}
+	{\par\usebeamertemplate{block end}
 	\end{actionenv}
 	}
 
@@ -82,18 +83,18 @@
 % We preferentially use the above but keep this one just-in-case
 \setbeamertemplate{block begin}{
 	\setlength{\mylength}{\textwidth}%
-	\begin{beamercolorbox}[ht=2.8ex,dp=2ex,wd=\mylength,center,rounded=false,
+	\begin{beamercolorbox}[ht=3.4ex,dp=1.8ex,wd=\mylength,center,rounded=false,
 												 shadow=false,leftskip=0cm,colsep*=0ex]{block title}%
 		\usebeamerfont*{block title}\insertblocktitle
 	\end{beamercolorbox}%
 	{\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip}}%
 	\usebeamerfont{block body}%
 	\begin{beamercolorbox}[rounded=false,shadow=false,center,wd=\textwidth,]{block body}%
-		\ifbeamercolorempty[bg]{block body}\vbox{}%
-		\begin{minipage}{0.96\textwidth}\vbox{}%
-		\justify
+		\vskip 1ex
+		\begin{minipage}{0.92\textwidth}\vbox{}%
 		}
 \setbeamertemplate{block end}{
+	\vspace{1em}
 	\end{minipage}
 	\end{beamercolorbox}
 	}

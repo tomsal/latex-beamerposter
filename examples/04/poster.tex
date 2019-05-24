@@ -6,11 +6,11 @@
 \usepackage[english]{babel} % required for rendering German special characters
 %\usepackage{siunitx} %pretty measurement unit rendering
 \usepackage{hyperref} %enable hyperlink for urls
-\usepackage{ragged2e}
+%\usepackage{ragged2e}
 \usepackage[font=scriptsize,justification=justified]{caption}
-\usepackage{array,booktabs,tabularx}
+%\usepackage{array,booktabs,tabularx}
 
-\newcolumntype{Z}{>{\centering\arraybackslash}X} % centered tabularx columns
+%\newcolumntype{Z}{>{\centering\arraybackslash}X} % centered tabularx columns
 %\sisetup{per=frac,fraction=sfrac}
 
 \title{\huge Opto-fMRI of Monoaminergic Systems and Psychotropic Drugs}
@@ -28,21 +28,15 @@
 \begin{frame}
 	\begin{tudcolumn}{.48\textwidth}
 					\begin{myblock}{Introduction}
-						\textbf{THIS IS NOT THE ORIGINAL DOCUMENT, and was produced from 
-								a modified static source, in order to guarantee portability.
-								The original source is available
-								\textcolor{red}{\href{https://bitbucket.org/TheChymera/znz_poster/src}{on bitbucket}}, 
-								and makes extensive use of PythonTeX. This also means you can 
-								expect PythonTeX to work nicely with this package and theme.}
+						\begin{itemize}
+							\item One
+							\item Two
+							\item Four
+						\end{itemize}
 
 						Monoaminergic systems are ensembles of neurons defined by the 
 						primary production of monoamine neurotransmitters (most prominently 
 						serotonin, dopamine, and noradrenaline).
-						%\begin{itemize}
-						%	\item Their wide-spread projections have implicated them in numerous neuropsychiatric disorders (e.g. depression, anxiety, addiction, and schizophrenia).
-						%	\item Their relevance to the control of neuronal function has made them targets of many therapeutic drugs (e.g. monoamine reuptake inhibitors) and drugs of abuse (e.g. amphetamines).
-						%	\item A high degree of evolutionary conservation makes them excellent candidates for translational research in rodents.
-						%\end{itemize}
 						The current project aims to establish opto-fMRI as an assay for
 						monoaminergic systems.
 						This assay will help ellucidate the functional mechanisms of
@@ -113,26 +107,26 @@
 						These are listed below, alongside a genotyping assay featuring 3
 						controls (water, known transgene, and known wildtype - on the
 						first, second-to-last and last non-ladder lanes respectively):
-						\vspace{0.1em}
-						\begin{figure}
-							\begin{minipage}{.45\textwidth}
-								\scriptsize
-								\begin{tabular}{@{} p{.1\linewidth} r r @{}}
-									\toprule
-									Direction  &      \multicolumn{2}{c @{}}{Target Construct}      \\
-									\cmidrule(l){2-3}
-									&   Cre       & GAPDH  \\
-									\cmidrule(lr){1-3}
-									fw &   \texttt{ACCAGCCAGCTATCAACTCG} & \texttt{CTCCATTTCCCCTGTTCTCC}    \\
-									rv &   \texttt{TTGCCCCTGTTTCACTATCC} & \texttt{GAGACCTGAATGCTGCTTCC}    \\
-									\bottomrule
-								\end{tabular}
-							\end{minipage}
-							\begin{minipage}{.45\textwidth}
-								\centering\includegraphics[width=0.95\textwidth]{img/ag1}
-							\end{minipage}
-						\end{figure}
-						\vspace{1em}
+						%\vspace{0.1em}
+						%\begin{figure}
+						%	\begin{minipage}{.45\textwidth}
+						%		\scriptsize
+						%		\begin{tabular}{@{} p{.1\linewidth} r r @{}}
+						%			\toprule
+						%			Direction  &      \multicolumn{2}{c @{}}{Target Construct}      \\
+						%			\cmidrule(l){2-3}
+						%			&   Cre       & GAPDH  \\
+						%			\cmidrule(lr){1-3}
+						%			fw &   \texttt{ACCAGCCAGCTATCAACTCG} & \texttt{CTCCATTTCCCCTGTTCTCC}    \\
+						%			rv &   \texttt{TTGCCCCTGTTTCACTATCC} & \texttt{GAGACCTGAATGCTGCTTCC}    \\
+						%			\bottomrule
+						%		\end{tabular}
+						%	\end{minipage}
+						%	\begin{minipage}{.45\textwidth}
+						%		\centering\includegraphics[width=0.95\textwidth]{img/ag1}
+						%	\end{minipage}
+						%\end{figure}
+						%\vspace{1em}
 						To facillitate multimodal and exploratory data analysis,
 						LabbookDB - a relational database structure - was developed to
 						replace the common lab book and integrate metadata directly with
