@@ -56,6 +56,18 @@
 \setbeamertemplate{itemize items}{\color{textcolor}$\boldsymbol\cdot$}
 \setbeamertemplate{navigation symbols}{}  % no navigation on a poster
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Display a grid to help align images ... and it looks nice with this color scheme
+% \beamertemplategridbackground[1cm]
+\newcommand{\drawgrid}{%
+	\\[0ex]
+  \begin{tikzpicture}[remember picture,overlay]
+		\draw[anchor=north west,line width=1pt,color=black!30,step=1cm,xshift=-0.0cm,yshift=0.5cm]
+			(current page.north west) grid 
+			[anchor=south east](current page.south east);
+  \end{tikzpicture}
+  }
+
 \newenvironment<>{tudcolumn}[1]{%before
 	\hfill
 	\begin{adjustbox}{minipage=[t][0.97\textheight][t]{#1},
@@ -170,10 +182,6 @@
 	\end{beamercolorbox}
 	\vskip0pt%
 	}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Display a grid to help align images ... and it looks nice with this color scheme
-% \beamertemplategridbackground[1cm]
 
 %Some beamer customizations:
 \setbeamertemplate{bibliography item}[text]

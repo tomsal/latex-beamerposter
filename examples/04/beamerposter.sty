@@ -119,7 +119,8 @@
 \DeclareOptionX{width}{\edef\customwidth{#1}\beamerposter@Info{custom poster width=\customwidth}}
 \DeclareOptionX{height}{\edef\customheight{#1}\beamerposter@Info{custom poster height=\customheight}}
 \DeclareOptionX{debug}{\beamerposter@Info{enabled debug mode}\@beamerposter@debugtrue}
-\DeclareOptionX{grid}{\beamerposter@Info{enabling grid}\beamertemplategridbackground[1cm]}% Display a grid to help align images
+% Display a grid to help align images
+\DeclareOptionX{grid}{\beamerposter@Info{enabling grid}\beamertemplategridbackground[1cm]}
 \DeclareOptionX{printer}{\edef\printerToUse{#1}\@beamerposter@externtrue}
 \DeclareOptionX*{\beamerposter@Warning{Unknown option ignored: \CurrentOption}}
 %\DeclareOptionX*{\PassOptionsToClass{\CurrentOption}{beamer}}
