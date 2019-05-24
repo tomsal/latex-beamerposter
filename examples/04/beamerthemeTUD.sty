@@ -15,10 +15,10 @@
 
 \mode<presentation>
 
-\definecolor{ETH1}{RGB}{31,64,122} %% NOTE: ?
-\definecolor{tudskyblue}{RGB}{0,166,214} %% NOTE: bg-color header and footer
-\definecolor{ETH6}{RGB}{111,111,110} %% NOTE: ?
-\definecolor{ETH8}{RGB}{0,122,146} %% NOTE: ?
+\definecolor{ETH1}{RGB}{31,64,122} %% NOTE: structure?
+\definecolor{tudskyblue}{RGB}{0,166,214} %% NOTE: bg-color footer
+\definecolor{textcolor}{RGB}{0,0,0} %% NOTE: normal text
+%\definecolor{ETH8}{RGB}{0,122,146} %% NOTE: ?
 \definecolor{tuddarkteal}{RGB}{0,106,150} %% NOTE: top color header gradient
 \definecolor{tudturquoise}{RGB}{0,184,255} %% NOTE: bottom color header gradient
 \definecolor{tudcyan}{RGB}{0,176,240} %% NOTE: bg-color for section heading
@@ -32,9 +32,9 @@
 
 \setbeamercolor{headline}{fg=red,bg=red}
 % This is the recommended color for Specialist community usage: change to ETH1 for general communication
-\setbeamercolor{footline}{fg=red, bg=red}
+\setbeamercolor{footline}{fg=textcolor, bg=red}
 \setbeamerfont{footline}{size=\large,series=\bf}
-\setbeamercolor{separation line}{bg=tudskyblue}
+\setbeamercolor{separation line}{bg=white}
 \setbeamercolor{title in headline}{fg=white}
 \setbeamercolor{author in headline}{fg=black}
 \setbeamercolor{institute in headline}{fg=black}
@@ -43,11 +43,11 @@
 \setbeamercolor{author in head/foot}{fg=white, bg=tudskyblue}
 \setbeamercolor{title in head/foot}{fg=red, bg=red}
 
-\setbeamercolor*{normal text}{fg=ETH6, bg=mainbg}
+\setbeamercolor*{normal text}{fg=textcolor, bg=mainbg}
 \setbeamercolor*{block body}{fg=black, bg=tudgray}
 \setbeamercolor*{block title}{fg=white,bg=tudcyan}
 \setbeamerfont{block title}{size=\large,series=\bf}
-\setbeamercolor{upper separation line head}{fg=red}
+\setbeamercolor{upper separation line head}{fg=red,bg=red}
 
 \setbeamercolor*{example body}{fg=red,bg=red}
 \setbeamercolor*{example text}{fg=red,bg=red}
@@ -82,7 +82,6 @@
 % We preferentially use the above but keep this one just-in-case
 \setbeamertemplate{block begin}{
 	\setlength{\mylength}{\textwidth}%
-	%\vskip2ex
 	\begin{beamercolorbox}[ht=2.8ex,dp=2ex,wd=\mylength,center,rounded=false,
 												 shadow=false,leftskip=0cm,colsep*=0ex]{block title}%
 		\usebeamerfont*{block title}\insertblocktitle
@@ -146,21 +145,31 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setbeamertemplate{footline}{
 	\begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
-		\rule{0pt}{2pt}
+		\rule{\paperwidth}{5pt}
+		\vskip 0.5ex
+		\begin{columns}[T]
+			\begin{column}{0.23\textwidth}
+				Email corresponding author: \\
+				j.doe@tudelft.nl \\
+				www.intelligent-vehicles.org
+			\end{column}
+			\begin{column}{0.40\textwidth}
+				This work received support from ... within the ... project (nr. ...)
+			\end{column}
+			\begin{column}{0.23\textwidth}
+				\centering
+				\includegraphics[width=0.45\textwidth]{tudelft.pdf}
+			\end{column}
+		\end{columns}
+		\vskip 1ex
 	\end{beamercolorbox}
 	\leavevmode%
-	\begin{beamercolorbox}[ht=4ex,leftskip=1cm,rightskip=1cm]{author in head/foot}%
-		\href{http://www.aic-fmi.ethz.ch}{www.aic-fmi.ethz.ch}
+	\begin{beamercolorbox}[ht=4ex,leftskip=1cm,rightskip=4cm]{author in head/foot}%
 		\hfill
-		\today
-		\hfill
-		\href{mailto:my_address@wikibooks.org}{ioanas@biomed.ee.ethz.ch}
-		\vskip1ex
+		Cognitive Robotics Department
+		\vskip 1ex
 	\end{beamercolorbox}
 	\vskip0pt%
-	\begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
-		\rule{0pt}{2pt}
-	\end{beamercolorbox}
 	}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
